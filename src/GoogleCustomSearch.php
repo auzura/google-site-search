@@ -81,7 +81,7 @@ class GoogleCustomSearch
         if (function_exists('curl_version')) {
             $response = $this->getSslPage('https://www.googleapis.com/customsearch/v1?' . http_build_query($params));
         } else {
-            $response = file_get_contents('https://www.googleapis.com/customsearch/v1?' . http_build_query($params), false, $context)
+            $response = file_get_contents('https://www.googleapis.com/customsearch/v1?' . http_build_query($params), false, $context);
         }
 
         return json_decode($response);
